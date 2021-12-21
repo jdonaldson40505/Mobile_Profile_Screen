@@ -22,15 +22,15 @@
         android:id="@+id/update"
         android:layout_width="279dp"
         android:layout_height="62dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginStart="64dp"
+
         android:layout_marginBottom="300dp"
         android:text="update"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.479" />
 
     <EditText
         android:id="@+id/editTextPhone"
