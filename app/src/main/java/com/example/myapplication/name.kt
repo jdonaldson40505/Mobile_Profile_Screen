@@ -14,7 +14,7 @@ class name :Fragment(){
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
+    var stringViewModel = Storage()
 
 
 
@@ -31,9 +31,6 @@ class name :Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.back.setOnClickListener {
-            findNavController().navigate(R.id.to_profile)
-        }
         binding.update.setOnClickListener {
 
             findNavController().navigate(R.id.to_profile)

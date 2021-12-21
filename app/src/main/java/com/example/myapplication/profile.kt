@@ -4,14 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.ProfileBinding
 
 
 import android.widget.TextView
-
-
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
 
 
 class profile: Fragment() {
@@ -20,6 +23,8 @@ class profile: Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private val stringViewModel: Storage by activityViewModels()
+
 
 
 
@@ -28,8 +33,12 @@ class profile: Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         _binding = ProfileBinding.inflate(inflater, container, false)
+        val phone = binding.phoneNumber
+        stringViewModel.currentPhone.observe(viewLifecycleOwner,{
+            phone.text = it.toString()
+        })
+
         return binding.root
 
     }
@@ -49,11 +58,23 @@ class profile: Fragment() {
         binding.description.setOnClickListener {
             findNavController().navigate(R.id.to_Description)
         }
+        binding.button.setOnClickListener {
+            val phone = binding.phoneNumber
+            phone.text = stringViewModel.getPhone()
+        }
+
+
+
+
+
 
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
+
+

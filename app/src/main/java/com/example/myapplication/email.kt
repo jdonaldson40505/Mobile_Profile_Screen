@@ -15,7 +15,7 @@ class email:Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
+    var stringViewModel = Storage()
 
 
 

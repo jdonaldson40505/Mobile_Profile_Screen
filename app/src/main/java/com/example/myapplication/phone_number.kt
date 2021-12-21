@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.NameBinding
 import com.example.myapplication.databinding.PhoneNumberBinding
+import android.widget.EditText
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 
 class phone_number: Fragment() {
     private var _binding: PhoneNumberBinding? = null
@@ -15,6 +18,7 @@ class phone_number: Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private val data: Storage by viewModels()
 
 
 
@@ -34,6 +38,8 @@ class phone_number: Fragment() {
 
         binding.update.setOnClickListener {
 
+            val text = binding.editTextPhone
+            data.setPhone(text.text.toString())
             findNavController().navigate(R.id.to_profile)
         }
     }
