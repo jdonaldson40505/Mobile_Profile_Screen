@@ -21,10 +21,7 @@ class profile: Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    fun updateTextView(name: String?) {
-        val textView = binding.name
-        textView.text = name
-    }
+
 
 
     override fun onCreateView(
@@ -40,16 +37,16 @@ class profile: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.nameAction.setOnClickListener {
+        binding.name.setOnClickListener {
             findNavController().navigate(R.id.to_name)
         }
-        binding.phoneAction.setOnClickListener{
+        binding.phoneNumber.setOnClickListener{
             findNavController().navigate(R.id.to_Phone)
         }
-        binding.emailAction.setOnClickListener{
+        binding.email.setOnClickListener{
             findNavController().navigate(R.id.to_Email)
         }
-        binding.descriptionAction.setOnClickListener {
+        binding.description.setOnClickListener {
             findNavController().navigate(R.id.to_Description)
         }
 

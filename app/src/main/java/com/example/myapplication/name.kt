@@ -15,6 +15,9 @@ class name :Fragment(){
     // onDestroyView.
     private val binding get() = _binding!!
 
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,6 +32,10 @@ class name :Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         binding.back.setOnClickListener {
+            findNavController().navigate(R.id.to_profile)
+        }
+        binding.update.setOnClickListener {
+
             findNavController().navigate(R.id.to_profile)
         }
     }
