@@ -17,6 +17,7 @@ class description:Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    val stringView: Storage by activityViewModels()
 
 
 
@@ -35,7 +36,8 @@ class description:Fragment() {
 
 
         binding.update.setOnClickListener {
-
+            val desc = binding.editTextPhone
+            stringView.setDescip(desc.text.toString())
             findNavController().navigate(R.id.to_profile)
         }
     }

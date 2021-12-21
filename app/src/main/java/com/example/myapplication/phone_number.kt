@@ -18,7 +18,7 @@ class phone_number: Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private val data: Storage by viewModels()
+    private val data: Storage by activityViewModels()
 
 
 

@@ -38,6 +38,18 @@ class profile: Fragment() {
         stringViewModel.currentPhone.observe(viewLifecycleOwner,{
             phone.text = it.toString()
         })
+        val email = binding.email
+        stringViewModel.currentEmail.observe(viewLifecycleOwner,{
+            email.text = it.toString()
+        })
+        val name = binding.name
+        stringViewModel.currentName.observe(viewLifecycleOwner,{
+            name.text = it.toString()
+        })
+        val desc = binding.description
+        stringViewModel.currentDescription.observe(viewLifecycleOwner,{
+            desc.text = it.toString()
+        })
 
         return binding.root
 
@@ -58,14 +70,6 @@ class profile: Fragment() {
         binding.description.setOnClickListener {
             findNavController().navigate(R.id.to_Description)
         }
-        binding.button.setOnClickListener {
-            val phone = binding.phoneNumber
-            phone.text = stringViewModel.getPhone()
-        }
-
-
-
-
 
 
     }
