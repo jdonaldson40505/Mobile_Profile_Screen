@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+<!--    strings to be manipulated by user input-->
+    <string name="name">name</string>
+    <string name="email">email</string>
+    <string name="description">Description</string>
+    <string name="phone_number">Phone Number</string>
+
+</resources>

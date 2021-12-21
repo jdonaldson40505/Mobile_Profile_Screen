@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools ="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/profile">
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.myapplication.profile"
+        android:label="profile"
+        tools:layout="@layout/profile">
+
+        <action
+            android:id="@+id/to_name"
+            app:destination="@id/name" />
+        <action
+            android:id="@+id/to_Phone"
+            app:destination="@+id/phone_number"/>
+        <action
+            android:id="@+id/to_Description"
+            app:destination="@+id/description"/>
+        <action
+            android:id="@+id/to_Email"
+            app:destination="@+id/email"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/email"
+        android:name="com.example.myapplication.email"
+        android:label="email"
+        tools:layout="@layout/email">
+
+        <action
+            android:id="@+id/to_profile"
+            app:destination="@+id/profile"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/phone_number"
+        android:name="com.example.myapplication.phone_number"
+        android:label="phone_number"
+        tools:layout="@layout/phone_number">
+
+        <action
+            android:id="@+id/to_profile"
+            app:destination="@+id/profile"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/name"
+        android:name="com.example.myapplication.name"
+        android:label="name"
+        tools:layout="@layout/name">
+
+        <action
+            android:id="@+id/to_profile"
+            app:destination="@+id/profile"/>
+    </fragment>
+    <fragment
+        android:id="@+id/description"
+        android:name="com.example.myapplication.description"
+        android:label="description"
+        tools:layout="@layout/description">
+
+        <action
+            android:id="@+id/to_profile"
+            app:destination="@+id/profile"/>
+    </fragment>
+</navigation>
